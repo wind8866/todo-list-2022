@@ -21,8 +21,14 @@ npm init @eslint/config
 # problems/esm/react/Yes(ts)/browser,node/Javascript/Yes/yarn
 ```
 
-git branch
+**git branch**
 - main
 - develop
 - feature/*
 - fix/*
+
+**Local lint tools**
+- husky
+- eslint
+- prettier
+- commitlint
