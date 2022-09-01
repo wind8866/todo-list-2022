@@ -1,6 +1,9 @@
 export default {
-  // "**/*.ts?(x)": ["eslint src"],
-  "*.{ts,tsx,json,yml,yaml,md}": [
+  "*.{ts,tsx,json,yml,yaml}": [
+    "eslint --cache src",
+    "prettier --check"
+  ],
+  "*.md": [
     "prettier --write"
   ],
 }
