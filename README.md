@@ -1,12 +1,28 @@
 # TodoList
 
-- create-react-app(redux-typescript template)
-- typescript
-- react
-- redux
-- redux-tookit
+本项目的目的是探索一些我没使用过的新技术，下面是项目依赖的一些信息
 
-## Note
+- husky: 将 git hooks 放在项目中
+- commitlint: 配合 husky，用于在 pre-commit 阶段检测 git message 是否合格
+- lint-staged: 配合 husky 只检测添加到 git 缓存区的代码
+- eslint: 提供代码质量检查，目前使用的是默认配置
+- prettier: 用于自动格式化代码，使多人开发能自动保持标准代码风格
+
+- typescript: 弥补 js 的类型缺陷，提高代码质量
+- react: data => view 的保证，提供了完整的生态
+- create-react-app: 可立即上手的 react 完整框架
+- redux: 因在实际项目中使用的比较少但又很重要，所以加入了 redux
+- @reduxjs/toolkit: 特别方便的 redux 解决方案，感觉比 dva 那套简洁许多
+
+- [ ] 单元测试
+- [ ] 集成测试
+- [ ] Github Actions: 自动运行单元测试，打包部署等操作
+
+## 如何保证项目的质量
+
+-
+
+## 实践笔记
 
 ```bash
 npx create-react-app todo-list-2022 --template redux-typescript
@@ -41,16 +57,11 @@ npx --no -- commitlint --edit "\${1}"
 EEE
 chmod a+x .husky/commit-msg
 
-
-#
-yarn add --dev --exact prettier
+# pre-commit lint
+yarn add -D --exact prettier
 echo {}> .prettierrc.json
-yarn add --dev pretty-quick
-yarn husky set .husky/pre-commit "npx pretty-quick --staged"
-
-# TODO：npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
-# TODO:https://zhuanlan.zhihu.com/p/467335105    https://github.com/okonet/lint-staged
-# pre-push test
+yarn add -D lint-staged
+yarn husky set .husky/pre-commit "npx --no lint-staged"
 ```
 
 **git branch**
@@ -73,7 +84,8 @@ yarn husky set .husky/pre-commit "npx pretty-quick --staged"
 
 - [ ] husky 为什么不会自动安装？
 - [ ] [解决 prettier 与 eslint 的冲突](https://prettier.io/docs/en/install.html#eslint-and-other-linters)
-- [ ]
+- [ ] 如何在 commit 执行后 fix 文件但不自动 git 暂存 => prettier 所有文件
+- [ ] git 分支本地 develop 指向的是线上的 main
 
 检查并格式化`npx prettier --write .`
 检查是否修改`npx prettier --check .`
