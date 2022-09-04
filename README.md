@@ -80,6 +80,8 @@ yarn husky set .husky/pre-commit "npx --no lint-staged"
 
 ## other
 
+测试 web hooks
+
 问题：
 
 - [ ] husky 为什么不会自动安装？
