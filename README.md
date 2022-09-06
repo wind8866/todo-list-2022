@@ -23,7 +23,7 @@
 - main 分支保护策略
   - main 分支不允许 push，必须进经过 PR(Pull Request) 才能 merge 到 main
   - 必须 review 通过才能 PR（不能 review 自己的 PR）
-  - 分支必须 CI 成功才能合并到主分支【未验证失败情况】
+  - TODO 分支必须 CI 成功才能合并到主分支【未验证失败情况】
 
 ## 实践笔记
 
