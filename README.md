@@ -20,7 +20,10 @@
 
 ## 如何保证项目的质量
 
--
+- main 分支保护策略
+  - main 分支不允许 push，必须进经过 PR(Pull Request) 才能 merge 到 main
+  - 必须 review 通过才能 PR（不能 review 自己的 PR）
+  - 分支必须 CI 成功才能合并到主分支【未验证失败情况】
 
 ## 实践笔记
 
@@ -88,6 +91,8 @@ yarn husky set .husky/pre-commit "npx --no lint-staged"
 - [ ] [解决 prettier 与 eslint 的冲突](https://prettier.io/docs/en/install.html#eslint-and-other-linters)
 - [ ] 如何在 commit 执行后 fix 文件但不自动 git 暂存 => prettier 所有文件
 - [ ] git 分支本地 develop 指向的是线上的 main
+- [ ] check.yaml 中 node 版本 14.x
+- [ ] develop 能不能也保护起来，不可删除就好
 
 检查并格式化`npx prettier --write .`
 检查是否修改`npx prettier --check .`
